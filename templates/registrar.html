@@ -6,30 +6,31 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Registrar Encomenda</h1><br><br>
+    <h1 class="titulo">Registrar Encomenda</h1><br><br><br>
     <form method="POST">
-        <label>Porteiro:</label><br>
+
+        <label class="lblPorteiro">Porteiro:</label><br><br>
         <select name="porteiro" id="porteiro">
             <option value="Isaias">Isaias</option>
             <option value="João Filipe">João Filipe</option>
             <option value="Alisso">Alisso</option>
             <option value="Felippe">Felippe</option>
-        </select> <br><br>
+        </select> <br><br><br>
 
-        <label>Nome Morador:</label><br>
-        <input type="text" name="morador" required id="morador"><br><br>
+        <label class="lblMorador">Nome Morador:</label><br><br>
+        <input type="text" name="morador" required id="morador"><br><br><br>
 
-        <label>Unidade:</label><br>
-        <input type="text" name="unidade" required id="unidade"><br><br>
+        <label class="lblUnidade">Unidade:</label><br><br>
+        <input type="text" name="unidade" required id="unidade"><br><br><br>
 
-        <label>Pagina:</label><br>
-        <input type="text" name="pagina" required id="pagina"><br><br>
+        <label class="lblPagina">Pagina:</label><br><br>
+        <input type="text" name="pagina" required id="pagina"><br><br><br>
 
-        <label>Data:</label><br>
-        <input type="date" name="data" required id="data" readonly><br><br>
+        <label class="lblData">Data:</label><br><br>
+        <input type="date" name="data" required id="data" readonly><br><br><br>
 
-        <label>Hora:</label><br>
-        <input type="time" name="hora" required id="hora" readonly><br><br>
+        <label class="lblHora">Hora:</label><br><br>
+        <input type="time" name="hora" required id="hora" readonly><br><br><br><br>
 
         <input id="regis" type="submit" value="Registrar" style="padding:5px 10px;">
 
@@ -45,8 +46,8 @@
         const minutes = now.getMinutes().toString().padStart(2, '0');
         document.getElementById('hora').value = `${hours}:${minutes}`;
         </script>
-
+        <button class="voltar" onclick="window.location.href='/'" style="margin-top:10px;">Voltar</button>
     </form>
-    <button class="voltar" onclick="window.location.href='/'" style="margin-top:10px;">Voltar</button>
+    
 </body>
 </html>

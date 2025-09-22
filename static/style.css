@@ -7,66 +7,133 @@
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #F4F0EA;
     color: #000000;
     font-family: "Cabin", sans-serif;
     font-weight: 400;
 }
 
+/*Inicio encomendas*/
+.regis {
+    width: 80%;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    outline: none;
+}
+
+.encomendas {
+    width: 80%;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    outline: none;
+}
+
+
 /*Registar*/
+
+.titulo {
+    
+}
+
+.lblPorteiro {
+    width: 80%;
+    font-size: 20px;
+}
 
 #porteiro {
     width: 5%;
     border-radius: 10px;
     font-size: 20px;
     text-align: center;
-    width: 10%;
+    width: 80%;
+    outline: none;
+}
+
+.lblMorador {
+    width: 80%;
+    font-size: 20px;
 }
 
 #morador {
-    width: 10%;
+    width: 80%;
     font-size: 20px;
     border-radius: 10px;
-    
+    text-align: center;
+    outline: none;
+}
+
+.lblUnidade {
+    width: 80%;
+    font-size: 20px;
 }
 
 #unidade {
-    width: 10%;
+    width: 80%;
     font-size: 20px;
     border-radius: 10px;
+    text-align: center;
+    outline: none;
+}
+
+.lblPagina {
+    width: 80%;
+    font-size: 20px;
 }
 
 #pagina {
-    width: 10%;
+    width: 80%;
     font-size: 20px;
     border-radius: 10px;
+    text-align: center;
+    outline: none;
+}
+
+.lblData {
+    width: 80%;
+    font-size: 20px;
 }
 
 #data {
-    width: 10%;
+    width: 80%;
     font-size: 20px;
     border-radius: 10px;
     text-align: center;
+    outline: none;
+}
+
+.lblHora {
+    width: 80%;
+    font-size: 20px;
 }
 
 #hora {
-    width: 10%;
+    width: 80%;
     font-size: 20px;
     border-radius: 10px;
     text-align: center;
+    outline: none;
 }
 
 #regis {
-    width: 10%;
+    width: 80%;
     font-size: 20px;
     border-radius: 10px;
-    
+    text-align: center;
+    outline: none;
 }
 
 
 .voltar {
-    width: 10%;
+    width: 80%;
     font-size: 20px;
     border-radius: 10px;   
     text-align: center;
+    outline: none;
 }
+

@@ -3,10 +3,13 @@
 <head>
     <title>Encomendas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Encomendas</h1>
-    <button onclick="window.location.href='/encomendas'" style="padding:10px 20px; margin:10px;">Encomendas Retiradas</button>
-    <button onclick="window.location.href='/registrar'" style="padding:10px 20px; margin:10px;">Registrar Encomenda</button>
+   
+        <h1 class="titulo">Encomendas</h1><br><br><br>
+        <button class="encomendas" onclick="window.location.href='/encomendas'" style="padding:10px 20px; margin:10px;">Encomendas Retiradas</button><br>
+        <button class="regis" onclick="window.location.href='/registrar'" style="padding:10px 20px; margin:10px;">Registrar Encomenda</button>
+  
 </body>
 </html>

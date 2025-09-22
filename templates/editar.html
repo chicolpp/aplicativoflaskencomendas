@@ -2,30 +2,38 @@
 <html>
 <head>
     <title>Editar Encomenda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Editar Encomenda</h1>
     <form action="" method="POST">
-        <label>Porteiro:</label><br>
-        <input type="text" name="porteiro" value="{{ encomenda.porteiro }}" required><br><br>
+        <label class="lblPorteiro">Porteiro:</label><br><br>
+        <select name="porteiro" id="porteiro">
+            <option value="Isaias" {% if encomenda.porteiro == "Isaias" %}selected{% endif %}>Isaias</option>
+            <option value="João Filipe" {% if encomenda.porteiro == "João Filipe" %}selected{% endif %}>João Filipe</option>
+        <option value="Alisso" {% if encomenda.porteiro == "Alisso" %}selected{% endif %}>Alisso</option>
+        <option value="Felippe" {% if encomenda.porteiro == "Felippe" %}selected{% endif %}>Felippe</option>
+        </select><br><br><br>
 
-        <label>Morador:</label><br>
-        <input type="text" name="morador" value="{{ encomenda.morador }}" required><br><br>
+        <label id="lblMorador">Morador:</label><br><br>
+        <input id="morador" type="text" name="morador" value="{{ encomenda.morador }}" required><br><br><br>
 
-        <label>unidade</label><br>
-        <input type="text" name="unidade" value="{{ encomenda.unidade }}" required><br><br>
+        <label id="lblUnidade">unidade</label><br><br>
+        <input id="unidade" type="text" name="unidade" value="{{ encomenda.unidade }}" required><br><br><br>
 
-        <label>Pagina:</label><br>
-        <input type="text" name="pagina" value="{{ encomenda.pagina }}" required><br><br>
+        <label id="lblPagina">Pagina:</label><br><br>
+        <input id="pagina" type="text" name="pagina" value="{{ encomenda.pagina }}" required><br><br><br>
 
-        <label>Data:</label><br>
-        <input type="date" name="data" value="{{ encomenda.data }}" required><br><br>
+        <label id="lblData">Data:</label><br><br>
+        <input id="data" type="date" name="data" value="{{ encomenda.data }}" required><br><br><br>
 
-        <label>Hora:</label><br>
-        <input type="time" name="hora" value="{{ encomenda.hora }}" required><br><br>
+        <label id="lblHora">Hora:</label><br><br>
+        <input id="hora" type="time" name="hora" value="{{ encomenda.hora }}" required><br><br><br>
 
-        <input type="submit" value="Salvar Alterações">
+        <input id="regis" type="submit" value="Salvar Alterações">
+        <button class="voltar" onclick="window.location.href='/encomendas'" style="margin-top:10px;">Cancelar</button>
     </form>
-    <button onclick="window.location.href='/encomendas'" style="margin-top:10px;">Cancelar</button>
+    
 </body>
 </html>

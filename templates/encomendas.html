@@ -3,13 +3,14 @@
 <head>
     <title>Encomendas Retiradas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Encomendas Retiradas</h1>
+    <h1>Encomendas Retiradas</h1><br><br><br>
     <ul>
     {% for e in encomendas %}
         <li>
-            Porteiro: {{ e.porteiro }} - Morador: {{ e.morador }} - Pagina: {{ e.pagina }} - Data: {{ e.data }} - Hora: {{ e.hora }}
+            Porteiro: {{ e.porteiro }} - Morador: {{ e.morador }} - Pagina: {{ e.pagina }} - Data: {{ e.data }} - Hora: {{ e.hora }} 
             
             <form action="{{ url_for('editar_encomenda', id=e.id) }}" method="GET" style="display:inline;">
                 <input type="submit" value="Editar">
@@ -19,10 +20,12 @@
                 <input type="submit" value="Apagar" onclick="return confirm('Tem certeza que deseja apagar?');">
             </form>
         </li>
+        <br>
     {% endfor %}
+    
     </ul>
-
-    <button onclick="window.location.href='/'" style="margin-top:10px;">Voltar</button>
+    <button class="voltar" onclick="window.location.href='/'" style="margin-top:10px;">Voltar</button>
+    
 </body>
 </html>
     
