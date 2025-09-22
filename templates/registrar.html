@@ -3,21 +3,27 @@
 <head>
     <title>Registrar Encomenda</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Registrar Encomenda</h1>
+    <h1>Registrar Encomenda</h1><br><br>
     <form method="POST">
-        <label>Nome Porteiro:</label><br>
-        <input type="text" name="porteiro" required><br><br>
+        <label>Porteiro:</label><br>
+        <select name="porteiro" id="porteiro">
+            <option value="Isaias">Isaias</option>
+            <option value="João Filipe">João Filipe</option>
+            <option value="Alisso">Alisso</option>
+            <option value="Felippe">Felippe</option>
+        </select> <br><br>
 
         <label>Nome Morador:</label><br>
-        <input type="text" name="morador" required><br><br>
+        <input type="text" name="morador" required id="morador"><br><br>
 
         <label>Unidade:</label><br>
-        <input type="text" name="unidade" required><br><br>
+        <input type="text" name="unidade" required id="unidade"><br><br>
 
         <label>Pagina:</label><br>
-        <input type="text" name="pagina" required><br><br>
+        <input type="text" name="pagina" required id="pagina"><br><br>
 
         <label>Data:</label><br>
         <input type="date" name="data" required id="data" readonly><br><br>
@@ -25,7 +31,7 @@
         <label>Hora:</label><br>
         <input type="time" name="hora" required id="hora" readonly><br><br>
 
-        <input type="submit" value="Registrar" style="padding:5px 10px;">
+        <input id="regis" type="submit" value="Registrar" style="padding:5px 10px;">
 
         <script>
         // Pegar a data e hora atual
@@ -41,6 +47,6 @@
         </script>
 
     </form>
-    <button onclick="window.location.href='/'" style="margin-top:10px;">Voltar</button>
+    <button class="voltar" onclick="window.location.href='/'" style="margin-top:10px;">Voltar</button>
 </body>
 </html>
