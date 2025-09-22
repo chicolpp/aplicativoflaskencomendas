@@ -14,10 +14,27 @@
         <label>Pagina</label><br>
         <input type="text" name="pagina" required><br><br>
         <label>Data:</label><br>
-        <input type="text" name="data" required><br><br>
+        <input type="date" name="data" required id="data" readonly><br><br>
+
         <label>Hora:</label><br>
-        <input type="text" name="hora" required><br><br>
+        <input type="time" name="hora" required id="hora" readonly><br><br>
+
         <input type="submit" value="Registrar" style="padding:5px 10px;">
+
+        <script>
+        // Pegar a data e hora atual
+        const now = new Date();
+
+        // Formatar a data para yyyy-mm-dd
+        const today = now.toISOString().split('T')[0];
+        document.getElementById('data').value = today;
+
+        // Formatar a hora para hh:mm
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        document.getElementById('hora').value = `${hours}:${minutes}`;
+        </script>
+
     </form>
     <button onclick="window.location.href='/'" style="margin-top:10px;">Voltar</button>
 </body>

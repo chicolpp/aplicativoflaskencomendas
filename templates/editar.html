@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Encomenda</title>
+</head>
+<body>
+    <h1>Editar Encomenda</h1>
+    <form action="" method="POST">
+        <label>Porteiro:</label><br>
+        <input type="text" name="porteiro" value="{{ encomenda.porteiro }}" required><br><br>
+
+        <label>Morador:</label><br>
+        <input type="text" name="morador" value="{{ encomenda.morador }}" required><br><br>
+
+        <label>Pagina:</label><br>
+        <input type="text" name="pagina" value="{{ encomenda.pagina }}" required><br><br>
+
+        <label>Data:</label><br>
+        <input type="date" name="data" value="{{ encomenda.data }}" required><br><br>
+
+        <label>Hora:</label><br>
+        <input type="time" name="hora" value="{{ encomenda.hora }}" required><br><br>
+
+        <input type="submit" value="Salvar Alterações">
+    </form>
+    <button onclick="window.location.href='/encomendas'" style="margin-top:10px;">Cancelar</button>
+</body>
+</html>

@@ -51,6 +51,28 @@ def encomendas():
     todas_encomendas = Encomenda.query.all()
     return render_template('encomendas.html', encomendas=todas_encomendas)
 
+# Rota para apagar encomenda
+@app.route('/apagar/<int:id>', methods=['POST'])
+def apagar_encomenda(id):
+    encomenda = Encomenda.query.get_or_404(id)
+    db.session.delete(encomenda)
+    db.session.commit()
+    return redirect(url_for('encomendas'))
+
+# Rota para editar encomenda
+@app.route('/editar/<int:id>', methods=['GET', 'POST'])
+def editar_encomenda(id):
+    encomenda = Encomenda.query.get_or_404(id)
+    if request.method == 'POST':
+        encomenda.porteiro = request.form['porteiro']
+        encomenda.morador = request.form['morador']
+        encomenda.pagina = request.form['pagina']
+        encomenda.data = request.form['data']
+        encomenda.hora = request.form['hora']
+        db.session.commit()
+        return redirect(url_for('encomendas'))
+    return render_template('editar.html', encomenda=encomenda)
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
