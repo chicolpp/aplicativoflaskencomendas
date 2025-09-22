@@ -11,6 +11,7 @@ class Encomenda(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     porteiro = db.Column(db.String(100), nullable=False)
     morador = db.Column(db.String(100), nullable=False)
+    unidade = db.Column(db.Integer, nullable=False)
     pagina = db.Column(db.String(50), nullable=False)
     data = db.Column(db.String(20), nullable=False)
     hora = db.Column(db.String(20), nullable=False)
@@ -29,6 +30,7 @@ def registrar():
     if request.method == 'POST':
         porteiro = request.form['porteiro']
         morador = request.form['morador']
+        unidade = request.form['unidade']
         pagina = request.form['pagina']
         data = request.form['data']
         hora = request.form['hora']
@@ -36,6 +38,7 @@ def registrar():
         nova_encomenda = Encomenda(
             porteiro=porteiro,
             morador=morador,
+            unidade=unidade,
             pagina=pagina,
             data=data,
             hora=hora
@@ -66,6 +69,7 @@ def editar_encomenda(id):
     if request.method == 'POST':
         encomenda.porteiro = request.form['porteiro']
         encomenda.morador = request.form['morador']
+        encomenda.unidade = request.form['unidade']
         encomenda.pagina = request.form['pagina']
         encomenda.data = request.form['data']
         encomenda.hora = request.form['hora']

@@ -9,10 +9,16 @@
     <form method="POST">
         <label>Nome Porteiro:</label><br>
         <input type="text" name="porteiro" required><br><br>
-        <label>Nome Morador</label><br>
+
+        <label>Nome Morador:</label><br>
         <input type="text" name="morador" required><br><br>
-        <label>Pagina</label><br>
+
+        <label>Unidade:</label><br>
+        <input type="text" name="unidade" required><br><br>
+
+        <label>Pagina:</label><br>
         <input type="text" name="pagina" required><br><br>
+
         <label>Data:</label><br>
         <input type="date" name="data" required id="data" readonly><br><br>
 
@@ -24,7 +30,6 @@
         <script>
         // Pegar a data e hora atual
         const now = new Date();
-
         // Formatar a data para yyyy-mm-dd
         const today = now.toISOString().split('T')[0];
         document.getElementById('data').value = today;
